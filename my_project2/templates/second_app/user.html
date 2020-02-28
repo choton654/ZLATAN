@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>THIS IS FOR USER USE</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1> HERE ARE YOUR USERS--> </h1>
+        </div>
+
+        <div class='User_list'>
+            {% if user %} {% for i in user %}
+            <ol>
+                <li>USER INFO:
+                    <ul>
+                        <li>{{ i.First_name }}</li>
+                        <li>{{ i.Last_name }}</li>
+                        <li>{{ i.Urls }}</li>
+                    </ul>
+                </li>
+            </ol>
+            {% endfor %} {% else %}
+            <p>NO USER FOUND</p>
+            {% endif %}
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>
