@@ -1,0 +1,15 @@
+<!DOCTYPE html> {% extends "third_app/base.html" %} {% block body_block %}
+<div class="container">
+    <h1 class="container">Welcome to Login </h1>
+
+    <form action="{% url 'third_app:user_login' %}" method="POST">
+        {% csrf_token %}
+        <label for="username">username</label>
+        <input type="text" name="username" placeholder="Enter username"><br>
+        <label for="password">password</label>
+        <input type="password" name="password"><br>
+        <input type="submit" value="Login">
+
+    </form>
+</div>
+{% endblock %}
