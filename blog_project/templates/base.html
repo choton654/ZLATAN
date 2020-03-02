@@ -1,0 +1,57 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+
+<head>
+
+    <title>Django Blog</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet " href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:%C7%93%C7%8F%C7%8F%22 ">
+    <link rel="stylesheet " href="{% static 'css/base.css' %} ">
+    <style>
+        div#game,
+        h1#h {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container ">
+        <nav class="navbar navbar-light bg-dark">
+
+            <div class="nav-left">
+                <h1 id="d"><a href="{% url 'post_list' %} ">Django Blog</a></h1>
+            </div>
+            <div>
+                <h1 id="h"><a class="btn btn-primary" href="{% url 'index' %} ">HOME</a></h1>
+            </div>
+
+        </nav>
+
+
+
+        <div class="jumbotron">
+
+
+            {% if user.is_authenticated %}
+            <h2>Hi {{ user.username }}</h2>
+            <a href="{% url 'logout' %}">Logout</a> {% else %}
+            <h2>You are not logged in</h2>
+            <a href="{% url 'login' %}">Login Here</a> {% endif %}
+            <div id="game">
+                <a class="btn btn-success" href="{% url 'game' %}">LAUNCH GAME</a>
+            </div>
+            <div>
+                {% block content %} {% endblock content %}
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+</body>
+
+</html>

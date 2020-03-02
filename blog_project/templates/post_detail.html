@@ -1,0 +1,33 @@
+<!DOCTYPE html> {% extends "base.html" %} {% block content %}
+
+
+
+<style>
+    div#del,
+    div#edit {
+        float: right;
+    }
+</style>
+
+<div class="jumbotron">
+    <div class="post_entry">
+        <h2><strong>TITLE</strong>: {{object.title}}</h2>
+        <p><strong>CONTENT</strong>: {{object.body}}</p>
+        <p><strong>AUTHOR</strong>: {{object.author}}</p>
+    </div>
+    <p>
+        <div class="nav nav-right" id="edit">
+            <a class="btn btn-primary" href="{% url 'post_edit' post.pk %}">+edit ur blog</a>
+
+        </div>
+    </p><br><br>
+    <p>
+        <div class="nav nav-right" id="del">
+
+            <a class="btn btn-danger" href="{% url 'post_delete' post.pk %}">delete ur blog</a>
+
+        </div>
+    </p>
+
+</div>
+{% endblock content %}

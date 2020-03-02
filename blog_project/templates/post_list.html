@@ -1,0 +1,31 @@
+<!DOCTYPE html> {% extends 'base.html' %} {% block content%}
+
+
+
+<style>
+    div#create {
+        margin-bottom: 5pxpx;
+    }
+    
+    p {
+        margin: 10px;
+    }
+</style>
+
+
+<p>
+    {% for post in object_list %}
+
+    <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title}}</a></h2>
+
+    {% endfor %}
+</p>
+<div class="">
+    <div class="nav nav-right" id="create">
+        <a class="btn btn-primary" href="{% url 'post_create' %}">Create new Blog</a>
+    </div><br>
+</div>
+
+
+
+{% endblock content %}
