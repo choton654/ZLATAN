@@ -1,0 +1,14 @@
+<%-  include('./partials/header')%>
+
+
+    <div class="container">
+        <form action="/campground/<%= data._id %>?_method=DELETE" method="POST">
+            <h2 style="color: beige"> Do you want to delete
+                <%= data.title %>?
+            </h2>
+            <button class="btn btn-danger">Delete</button>
+
+        </form>
+        <a href="/campground/<%= data._id %>" style="color: beige">cancel</a>
+    </div>
+    <%- include('./partials/footer') %>

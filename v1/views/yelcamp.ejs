@@ -1,0 +1,46 @@
+<%-  include('./partials/header')%>
+
+    <div class="container">
+        <div class="shadow p-3 mb-5 rounded">
+            <header class="jumbotron ">
+                <div class="container">
+
+                    <h1 style="color:#00994D">Welcome to yelpcamp</h1><br>
+
+                    <p>
+                        <h4 style="color:aliceblue">Camping is an outdoor activity involving overnight stays away from home in a shelter, such as a tent or a recreational vehicle. Typically participants leave developed areas to spend time outdoors in more natural ones in pursuit
+                            of activities providing them enjoyment. To be regarded as "camping" a minimum of one night is spent outdoors, distinguishing it from day-tripping, picnicking, and other similarly short-term recreational activities. Camping
+                            can be enjoyed through all four seasons</h4>
+                    </p><br>
+                    <a class="btn btn-info btn-lg" href="/campground/new">Create new camp</a>
+                </div>
+
+            </header>
+        </div>
+        <div class="row text-center" style="display: flex; flex-wrap: wrap">
+            <% data.forEach(function(camp){%>
+                <div class="col-md-3 col-sm-6">
+                    <div class="shadow p-3 mb-5 rounded">
+                        <figure class="figure text-center">
+                            <img src="<%= camp.image %>" class="figure-img img-fluid img-thumbnail" alt="...">
+                            <figcaption class="figure-caption">
+                                <h4 style="color: rgb(238, 255, 0)">
+                                    <%= camp.title %>
+                                </h4>
+
+                            </figcaption>
+                        </figure>
+                        <div>
+                            <a href="/campground/<%= camp._id %>" class="btn btn-outline-info btn-sm btn-block">Show info</a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <%   }) %>
+        </div>
+    </div>
+
+
+    <%- include('./partials/footer') %>

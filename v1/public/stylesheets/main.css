@@ -1,0 +1,24 @@
+body {
+    background-image: url(http://i.imgur.com/2LSMCmJ.jpg);
+}
+
+.jumbotron {
+    background: url(http://i.imgur.com/K3mPv14.jpg);
+    /* background-color: rgb(114, 125, 133); */
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 0;
+    height: 20%;
+    text-align: center;
+    color: whitesmoke;
+}
+
+
+/* 
+.jumbotron div {
+    margin-top: 15%;
+    margin-bottom: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background: rgba(10, 130, 4, .6);
+} */

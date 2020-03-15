@@ -1,0 +1,19 @@
+<%-  include('./partials/header')%>
+
+    <div class="container">
+        <h1 style="color: beige"> Register Here </h1>
+        <form action="/register" method="POST">
+            <div class="form-group">
+                <h4><label for="exampleInputEmail1" style="color: beige">Username</label></h4>
+                <input type="text" class="form-control shadow p-3 mb-5 bg-white rounded" id="exampleInputEmail1" aria-describedby="emailHelp" name="username">
+                <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+            </div>
+            <div class="form-group">
+                <h4><label for="exampleInputPassword1" style="color: beige">Password</label></h4>
+                <input type="password" class="form-control shadow p-3 mb-5 bg-white rounded" id="exampleInputPassword1" name="password">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <%- include('./partials/footer') %>

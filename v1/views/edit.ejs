@@ -1,0 +1,24 @@
+<%-  include('./partials/header')%>
+
+    <div class="container">
+        <h1 style="color: beige"> Edit Camp Info</h1>
+        <form action="/campground/<%= data._id %>?_method=PUT" method="POST">
+            <div class="form-group">
+                <h4><label for="exampleInputEmail1" style="color: beige">Add title</label></h4>
+                <input type="text" class="form-control shadow p-3 mb-5 bg-white rounded" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%= data.title %>" name="camp">
+                <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+            </div>
+            <div class="form-group">
+                <h4><label for="exampleInputPassword1" style="color: beige">Image Url</label></h4>
+                <input type="text" class="form-control shadow p-3 mb-5 bg-white rounded" id="exampleInputPassword1" value="<%= data.image %>" name="image_url">
+            </div>
+            <div class="form-group">
+                <h4><label class="form-check-label" for="exampleCheck1" style="color: beige">Write description</label></h4>
+                <textarea class="form-control shadow p-3 mb-5 bg-white rounded" id="exampleFormControlTextarea1" rows="3" value="" name="description"><%= data.description %></textarea>
+
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <%- include('./partials/footer') %>
